@@ -6,9 +6,8 @@
     --cabecalho: #b587ff; 
     --nav: #ebaaff;
     --btns-nav: #e6cbff;
-    --form: #fdc9f7;
+    --form-e-tb: #ffdcfb;
     --btns-e-nav: #ffaa90;
-    --tb-cabecalho: #ffb2ce;
 }
 
 *
@@ -37,6 +36,7 @@ section
     display: flex;
     flex-direction: column;
     width: 52rem;
+    max-width: 52rem;
     border: 2px solid #242424;
     border-radius: 6px;
     overflow: hidden;
@@ -68,8 +68,8 @@ section
     transform: translateY(5px);
 }
 
-#tema-1 { background-color: #b587ff; }
-#tema-2 { background-color: #22d499; }
+#tema-1 { background-color: #b587ff; transform: translateY(5px);}
+#tema-2 { background-color: #5befab; }
 #tema-3 { background-color: #4c93ff; }
 
 .titulo
@@ -101,7 +101,7 @@ section
 
 .sessao-2
 {
-    padding: 1.5rem;
+    padding: 2rem;
     justify-content: center;
     gap: 1rem;
     width: 60%;
@@ -153,9 +153,7 @@ section
 .area-form
 {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 1.5rem;
     width: 100%;
     height: 100%;
     background-color: #fff9dd;
@@ -168,7 +166,8 @@ section
     border: 2px solid #242424;
     border-radius: 4px;
     overflow: hidden;
-    width: 15rem;
+    width: 100%;
+    margin: 2.5rem;
 }
 
 .container nav
@@ -188,7 +187,7 @@ section
     padding: 1.3rem;
     gap: 1rem;
     width: 100%;
-    background-color: var(--form);
+    background-color: var(--form-e-tb);
 }
 
 #form-atualizar, #form-deletar
@@ -239,10 +238,14 @@ button:hover
     transform: scale(95%);
 }
 
+
+
+/* TABELA */
 .box-tabela
 {
-    height: 20.5rem;
-    overflow-y: scroll;
+    border: 2px solid #242424;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .tabela-nav
@@ -252,13 +255,7 @@ button:hover
     align-items: center;
     padding: .4rem;
     background-color: var(--btns-e-nav); 
-    border-top: 2px solid #242424;
-    border-right: 2px solid #242424;
-    border-left: 2px solid #242424;
-    overflow: hidden;
-
-    border-top-right-radius: 6px;
-    border-top-left-radius: 6px;  
+    border-bottom: 2px solid #242424;
 }
 .tb-pesquisa
 {
@@ -273,43 +270,83 @@ button:hover
 
 .tabela
 {
-    
     border-collapse: collapse;
-    background-color: #ffe5e5; 
-    border-bottom-right-radius: 6px;
-    border-bottom-left-radius: 6px;  
+    border-spacing: 0;
+    background-color: var(--form-e-tb); 
+    /* border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;   */
 }
 
-th
+thead { border-bottom: 2px solid #242424; background-color: var(--nav); }
+
+th:nth-last-child(1)
 {
-    background-color: var(--tb-cabecalho);
+    min-width: 106px;
+    border-right: none !important;
 }
 
 th, td
 {
-    border: 2px solid #242424;
-    padding: .6rem;
+    border-right: 2px solid #242424;
+    padding: .5rem;
     text-align: center;
+    min-width: 91px;
+    max-width: 91px;
 }
 
-.tbody
+tr
 {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #242424;
+}
+
+tr:nth-last-child(1) { border: none; }
+
+tbody
+{
+    display: block;
     overflow-y: scroll;
+    width: 100%;
+    height: 259px;
 }
 
-.box-tabela::-webkit-scrollbar 
-{
-    width: 15px;               /* width of the entire scrollbar */
-}
+tbody::-webkit-scrollbar { width: 15px; }
   
-.box-tabela::-webkit-scrollbar-track 
-{
-    background: #ffc9dd;        /* color of the tracking area */
-}
+tbody::-webkit-scrollbar-track { background: #fff9dd; }
   
-.box-tabela::-webkit-scrollbar-thumb 
+tbody::-webkit-scrollbar-thumb 
 {
-    background-color: #b587ff;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid #ffc9dd;  /* creates padding around scroll thumb */
+    background-color: #242424;
+    border-radius: 20px;
+    border: 2px solid #fff9dd;
+}
+
+
+
+/* RESPONSIVIDADE */
+@media(max-width: 879px)
+{
+    body
+    {
+        overflow: auto;
+        padding: 3rem;
+    }
+    section
+    {
+        width: auto;
+    }
+    .conteudo { flex-direction: column; }
+    .sessao-1 
+    { 
+        border-right: none; 
+        width: 100%;     
+    }
+    .container { margin: 1.5rem; }
+
+    .sessao-2 
+    { 
+        padding: 1.5rem; 
+        width: 100%;  
+    }
 }

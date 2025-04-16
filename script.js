@@ -59,16 +59,16 @@ function temas(btn_tema, tema)
 {
     let temas = 
     [
-        /* VARIÁVEIS */ ["--fundo", "--cabecalho", "--nav", "--btns-nav", "--form", "--btns-e-nav", "--tb-cabecalho"],
-        /* TEMA 1 */    ["#ffcff2", "#b587ff", "#ebaaff", "#e6cbff", "#fdc9f7", "#ffaa90", "#ffb2ce"], 
-        /* TEMA 2 */    ["#ffdfcf", "#60dfa5", "#c9a16e", "#b2ffd1", "#fbe3be", "#69b573", "#bbf9d1"],
+        /* VARIÁVEIS */ ["--fundo", "--cabecalho", "--nav", "--btns-nav", "--form-e-tb", "--btns-e-nav"],
+        /* TEMA 1 */    ["#ffcff2", "#b587ff", "#ebaaff", "#e6cbff", "#ffdcfb", "#ffaa90"], 
+        /* TEMA 2 */    ["#e7ffdc", "#5befab", "#dfb682", "#b2ffd1", "#e5fbdb", "#34cb7a"],
         /* TEMA 3 */    []
     ];
 
     btn_tema.addEventListener("click", () =>
     {
         btn_tema.style.transform = "translateY(5px)"; 
-        for(let i = 0; i <= 6; i++)
+        for(let i = 0; i <= 5; i++)
         {
             document.documentElement.style.setProperty(temas[0][i], temas[tema][i]);
         }

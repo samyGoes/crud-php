@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="sessao-2">
+                <div class="sessao-2"> 
                     <!-- LISTA -->      
                     <div class="box-tabela">
                         <div class="tabela-nav"> 
@@ -126,27 +126,26 @@
                                 <th> Pelagem </th>
                                 <th> Idade </th>
                             </thead>
-                            <div class="tbody">
-                                <tbody>
-                                <?php
-                                    foreach($lista_catos as $lista)
-                                    { 
-                                ?>                   
-                                    <tr>
-                                        <td> <?php echo $lista["id_cato"]; ?> </td>
-                                        <td> <?php echo $lista["nome_cato"]; ?> </td>
-                                        <td> <?php echo $lista["rga_cato"]; ?> </td>
-                                        <td> <?php echo $lista["pelagem_cato"]; ?> </td>
-                                        <td> <?php echo $lista["idade_cato"]; ?> </td> 
-                                    </tr>
-                                <?php
-                                    } 
-                                ?>
-                                </tbody>
-                            </div>
+                                                            
+                            <tbody>
+                            <?php
+                                foreach($lista_catos as $lista)
+                                { 
+                            ?>                   
+                                <tr>
+                                    <td> <?php echo $lista["id_cato"]; ?> </td>
+                                    <td> <?php echo $lista["nome_cato"]; ?> </td>
+                                    <td> <?php echo $lista["rga_cato"]; ?> </td>
+                                    <td> <?php echo $lista["pelagem_cato"]; ?> </td>
+                                    <td> <?php echo $lista["idade_cato"]; ?> </td> 
+                                </tr>
+                            <?php
+                                } 
+                            ?>
+                            </tbody>
                         </table>
                     </div>
-                    <button class="btnPDF"> BAIXAR PDF </button>
+                    <button class="btnPDF"> BAIXAR PDF </button>          
                 </div>
             </div>
         </section>
