@@ -17,6 +17,7 @@ const forms = document.querySelectorAll(".container");
 const btn_tema_1 = document.querySelector("#tema-1");
 const btn_tema_2 = document.querySelector("#tema-2");
 const btn_tema_3 = document.querySelector("#tema-3");
+let temaAtual = 1;
 
 //#endregion
 
@@ -55,9 +56,9 @@ function fechaJanelas()
     }); 
 }
 
-function temas(btn_tema, tema)
+function temas()
 {
-    let temas = 
+    const temas = 
     [
         /* VARIÁVEIS */ ["--fundo", "--cabecalho", "--nav", "--btns-nav", "--form-e-tb", "--btns-e-nav"],
         /* TEMA 1 */    ["#ffcff2", "#b587ff", "#ebaaff", "#e6cbff", "#ffdcfb", "#ffaa90"], 
@@ -65,14 +66,40 @@ function temas(btn_tema, tema)
         /* TEMA 3 */    []
     ];
 
-    btn_tema.addEventListener("click", () =>
+    const set_temas =
+    [
+        [btn_tema_1, "1"],
+        [btn_tema_2, "2"],
+        [btn_tema_3, "3"] 
+    ];
+
+    // SETANDO TEMA DEFINIDO NO LOCALSTORAGE
+    for(let i = 0; i < temas[0].length; i++)
     {
-        btn_tema.style.transform = "translateY(5px)"; 
-        for(let i = 0; i <= 5; i++)
+        document.documentElement.style.setProperty(temas[0][i], temas[temaAtual][i]);
+    }
+
+    for(let j = 0; j < set_temas.length; j++)
+    {
+        set_temas[j][0].addEventListener("click", () =>
         {
-            document.documentElement.style.setProperty(temas[0][i], temas[tema][i]);
-        }
-    });
+            localStorage.setItem('tema', set_temas[j][1]);
+            set_temas[j][0].style.transform = "translateY(5px)"; 
+    
+            for(let i = 0; i < temas[0].length; i++)
+            {
+                document.documentElement.style.setProperty(temas[0][i], temas[j+1][i]);
+            }
+        });
+    }
+}
+
+function verificaTemaAtual()
+{
+    if(localStorage.getItem('tema') == null)     { temaAtual = 1; }
+    else if(localStorage.getItem('tema') == "1") { temaAtual = 1; }
+    else if(localStorage.getItem('tema') == "2") { temaAtual = 2; }
+    else                                         { temaAtual = 3; }
 }
 
 gerarPDF();
@@ -83,7 +110,6 @@ menu(btn_nav_deletar, "none", "none", "flex");
 
 fechaJanelas();
 
-temas(btn_tema_1, 1);
-temas(btn_tema_2, 2);
-//temas(btn_tema_3, 3);
+verificaTemaAtual();
+temas();
 
