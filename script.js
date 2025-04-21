@@ -17,9 +17,10 @@ const forms = document.querySelectorAll(".container");
 const btn_tema_1 = document.querySelector("#tema-1");
 const btn_tema_2 = document.querySelector("#tema-2");
 const btn_tema_3 = document.querySelector("#tema-3");
-let temaAtual = 1;
+let temaDefinido = 1;
 
 //#endregion
+
 
 function gerarPDF()
 {
@@ -73,10 +74,11 @@ function temas()
         [btn_tema_3, "3"] 
     ];
 
-    // SETANDO TEMA DEFINIDO NO LOCALSTORAGE
+    // SETANDO ÚLTIMO TEMA DEFINIDO NO LOCALSTORAGE
     for(let i = 0; i < temas[0].length; i++)
     {
-        document.documentElement.style.setProperty(temas[0][i], temas[temaAtual][i]);
+        document.documentElement.style.setProperty(temas[0][i], temas[temaDefinido][i]);
+        set_temas[temaDefinido-1][0].style.transform = "translateY(5px)"; 
     }
 
     for(let j = 0; j < set_temas.length; j++)
@@ -84,8 +86,26 @@ function temas()
         set_temas[j][0].addEventListener("click", () =>
         {
             localStorage.setItem('tema', set_temas[j][1]);
+            verificaTemaDefinido();
             set_temas[j][0].style.transform = "translateY(5px)"; 
+
+            if(temaDefinido == 1) 
+            {                
+                set_temas[1][0].style.transform = "translateY(0px)"; 
+                set_temas[2][0].style.transform = "translateY(0px)"; 
+            }
+            else if(temaDefinido == 2) 
+            { 
+                set_temas[0][0].style.transform = "translateY(0px)"; 
+                set_temas[2][0].style.transform = "translateY(0px)"; 
+            }
+            else
+            {
+                set_temas[0][0].style.transform = "translateY(0px)"; 
+                set_temas[1][0].style.transform = "translateY(0px)"; 
+            }
     
+            // DEFININDO NOVO TEMA
             for(let i = 0; i < temas[0].length; i++)
             {
                 document.documentElement.style.setProperty(temas[0][i], temas[j+1][i]);
@@ -94,14 +114,17 @@ function temas()
     }
 }
 
-function verificaTemaAtual()
+function verificaTemaDefinido()
 {
-    if(localStorage.getItem('tema') == null)     { temaAtual = 1; }
-    else if(localStorage.getItem('tema') == "1") { temaAtual = 1; }
-    else if(localStorage.getItem('tema') == "2") { temaAtual = 2; }
-    else                                         { temaAtual = 3; }
+    if(localStorage.getItem('tema') == null)     { temaDefinido = 1; }
+    else if(localStorage.getItem('tema') == "1") { temaDefinido = 1; }
+    else if(localStorage.getItem('tema') == "2") { temaDefinido = 2; }
+    else                                         { temaDefinido = 3; }
 }
 
+
+
+//#region CHAMANDO FUNÇÕES
 gerarPDF();
 
 menu(btn_nav_cadastrar, "flex", "none", "none");
@@ -110,6 +133,6 @@ menu(btn_nav_deletar, "none", "none", "flex");
 
 fechaJanelas();
 
-verificaTemaAtual();
+verificaTemaDefinido();
 temas();
-
+//#endregion
