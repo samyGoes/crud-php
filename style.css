@@ -16,7 +16,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Public Sans", sans-serif;;
+    font-family: "Public Sans", sans-serif;
+    text-decoration: none;
 }
 
 body
@@ -26,9 +27,14 @@ body
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    gap: 4rem;
     background-color: var(--fundo);
-    overflow: hidden;
+    padding: 2rem 0 2rem 0;
+}
+
+a
+{
+    color: #e151ba;
+    font-weight: 600;
 }
 
 section
@@ -41,6 +47,7 @@ section
     border-radius: 6px;
     overflow: hidden;
     box-shadow: -3px 3px #454545;
+    margin-bottom: 1.5rem;
 }
 
 .temas
@@ -157,27 +164,33 @@ section
     width: 100%;
     height: 100%;
     background-color: #fffcec;
+    background-image: url("img/gato-preto.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 
 .container
 {
-    display: flex;
+    display: none;
     flex-direction: column;
     border: 2px solid #242424;
     border-radius: 4px;
     overflow: hidden;
     width: 100%;
-    margin: 2.5rem;
+    margin: 2rem;
 }
 
 .container nav
 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: .3rem;
     background-color: var(--btns-e-nav);
     border-bottom: 2px solid #242424;
 }
+
+.container nav i { font-size: 19px; }
 
 .container form
 {
@@ -256,6 +269,11 @@ button:hover
     padding: .4rem;
     background-color: var(--btns-e-nav); 
     border-bottom: 2px solid #242424;
+}
+.tabela-nav p
+{
+    display: flex;
+    gap: .4rem;
 }
 .tb-pesquisa
 {

@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <title> CRUD </title>
     </head>
     <body>
@@ -30,9 +31,10 @@
                     </nav>
             
                     <div class="area-form">
+                        
                     <!-- CADASTRO -->
                         <div class="container" id="form-cadastrar">
-                            <nav><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>
+                            <nav><i class="fi fi-rr-cat-head"></i><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>
                             <form class="form-cadastrar" action="cadastra-cato.php" method="post">
                                 <p class="form-titulo"> cadastrar catos </p>
                                 <p>        
@@ -59,7 +61,7 @@
 
                         <!-- ATUALIZAR -->
                         <div class="container" id="form-atualizar">   
-                            <nav><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>           
+                            <nav><i class="fi fi-rr-cat-head"></i><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>           
                             <form class="form-atualizar" action="update-cato.php" method="post">
                                 
                                 <p class="form-titulo"> Atualizar Catos </p>
@@ -91,7 +93,7 @@
 
                         <!-- DELETAR -->
                         <div class="container" id="form-deletar">  
-                            <nav><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>
+                            <nav><i class="fi fi-rr-cat-head"></i><span class="btn-fecha"><i class="fa-solid fa-xmark"></i></span></nav>
                             <form class="form-deletar" action="deleta-cato.php" method="post">                   
                                 <p class="form-titulo"> Deletar Catos </p>
                                 <p>
@@ -108,7 +110,7 @@
                     <!-- LISTA -->      
                     <div class="box-tabela">
                         <div class="tabela-nav"> 
-                            <p> CATOS CADASTRADOS </p> 
+                            <p> <i class="fi fi-rr-claw-marks"></i> CATOS CADASTRADOS </p> 
                             <form class="tb-pesquisa" action="#" method="post">
                                 <input type="text" placeholder="Pesquisar pelo nome..."> 
                                 <button type="submit" class="btn-nav" id="pesquisar"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -149,6 +151,9 @@
                 </div>
             </div>
         </section>
+
+        <p> Uicons de <a href="https://www.flaticon.com/uicons" target="_blank">Flaticon</a> e <a href="https://fontawesome.com/search" target="_blank">FontAwesome</a> </p>
+        <p>Figurinha gato preto de <a href="https://www.flaticon.com/br/stickers-gratis/gato-preto" title="gato preto figurinhas" target="_blank">Flaticon Stickers</a></p>
 
         <script src="script.js"></script>
 

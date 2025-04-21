@@ -78,7 +78,7 @@ function temas()
     for(let i = 0; i < temas[0].length; i++)
     {
         document.documentElement.style.setProperty(temas[0][i], temas[temaDefinido][i]);
-        set_temas[temaDefinido-1][0].style.transform = "translateY(5px)"; 
+        set_temas[temaDefinido-1][0].style.transform = "translateY(8px)"; 
     }
 
     for(let j = 0; j < set_temas.length; j++)
@@ -87,7 +87,7 @@ function temas()
         {
             localStorage.setItem('tema', set_temas[j][1]);
             verificaTemaDefinido();
-            set_temas[j][0].style.transform = "translateY(5px)"; 
+            set_temas[j][0].style.transform = "translateY(8px)"; 
 
             if(temaDefinido == 1) 
             {                
