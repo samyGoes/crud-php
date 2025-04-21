@@ -61,9 +61,9 @@ function temas()
     const temas = 
     [
         /* VARIÁVEIS */ ["--fundo", "--cabecalho", "--nav", "--btns-nav", "--form-e-tb", "--btns-e-nav"],
-        /* TEMA 1 */    ["#ffcff2", "#b587ff", "#ebaaff", "#e6cbff", "#ffdcfb", "#ffaa90"], 
-        /* TEMA 2 */    ["#e7ffdc", "#5befab", "#dfb682", "#b2ffd1", "#e5fbdb", "#34cb7a"],
-        /* TEMA 3 */    []
+        /* TEMA 1 */    ["#ffcff2", "#b587ff", "#ebaaff", "#e6cbff", "#fde4fa", "#ffaa90"], 
+        /* TEMA 2 */    ["#e7ffdc", "#5befab", "#ebc594", "#b2ffd1", "#f3fdef", "#34cb7a"],
+        /* TEMA 3 */    ["#cfe6ff", "#9098e7", "#aaffcd", "#c9daff", "#f7fdff", "#8ecaff"]
     ];
 
     const set_temas =
