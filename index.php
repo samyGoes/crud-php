@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <title> CRUD </title>
     </head>
@@ -155,12 +155,16 @@
         <p> Uicons de <a href="https://www.flaticon.com/uicons" target="_blank">Flaticon</a> e <a href="https://fontawesome.com/search" target="_blank">FontAwesome</a> </p>
         <p>Figurinha gato preto de <a href="https://www.flaticon.com/br/stickers-gratis/gato-preto" title="gato preto figurinhas" target="_blank">Flaticon Stickers</a></p>
 
-        <script src="script.js"></script>
+        <script type="module" src="assets/js/modules-imports/scr-tema-menu.js"></script>
+        <script type="module" src="assets/js/modules-imports/scr-geracao-pdf.js"></script>
 
+        <!-- ICONES -->
+        <script src="https://kit.fontawesome.com/a5226a0b94.js" crossorigin="anonymous"></script>
+
+        <!-- GERAÇÃO DE PDF -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <script src="https://kit.fontawesome.com/a5226a0b94.js" crossorigin="anonymous"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
+        
     </body>
 </html>

@@ -164,7 +164,7 @@ section
     width: 100%;
     height: 100%;
     background-color: #fffcec;
-    background-image: url("img/gato-preto.png");
+    background-image: url("../img/gato-preto.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;

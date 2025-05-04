@@ -1,4 +1,3 @@
-/*
 CREATE DATABASE bd_animais;
 USE bd_animais;
  
@@ -10,5 +9,3 @@ CREATE TABLE tb_catos
     pelagem_cato VARCHAR(35),
     idade_cato INT
 );
-teste
-*/
