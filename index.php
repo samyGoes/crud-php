@@ -46,12 +46,16 @@
                                     <input type="text" id="rga" name="rga" required>
                                 </p>
                                 <p>        
+                                    <label for="raca"> Raça </label>
+                                    <input type="text" id="raca" name="raca" required>
+                                </p>
+                                <p>        
                                     <label for="pelagem"> Pelagem </label>
                                     <input type="text" id="pelagem" name="pelagem" required>
                                 </p>
                                 <p>        
-                                    <label for="idade"> Idade </label>
-                                    <input type="text" id="idade" name="idade" required> 
+                                    <label for="data"> Data </label>
+                                    <input type="date" id="data" name="data">
                                 </p>
 
                                 <button type="submit"> CADASTRAR </button>
@@ -78,12 +82,16 @@
                                     <input type="text" id="rga" name="rga">
                                 </p>
                                 <p>        
+                                    <label for="raca"> Raça </label>
+                                    <input type="text" id="raca" name="raca" required>
+                                </p>
+                                <p>        
                                     <label for="pelagem"> Pelagem </label>
                                     <input type="text" id="pelagem" name="pelagem">
                                 </p>
                                 <p>        
-                                    <label for="idade"> Idade </label>
-                                    <input type="text" id="idade" name="idade">
+                                    <label for="data"> Data </label>
+                                    <input type="date" id="data" name="data">
                                 </p>
 
                                 <button class="btn-atualizar" type="submit"> ATUALIZAR </button>
@@ -125,8 +133,9 @@
                                 <th> ID </th>
                                 <th> Nome </th>
                                 <th> RGA </th>
+                                <th> Raça </th>
                                 <th> Pelagem </th>
-                                <th> Idade </th>
+                                <th> Data </th>
                             </thead>
                                                             
                             <tbody>
@@ -138,8 +147,9 @@
                                     <td> <?php echo $lista["id_cato"]; ?> </td>
                                     <td> <?php echo $lista["nome_cato"]; ?> </td>
                                     <td> <?php echo $lista["rga_cato"]; ?> </td>
+                                    <td> <?php echo $lista["raca_cato"]; ?> </td>
                                     <td> <?php echo $lista["pelagem_cato"]; ?> </td>
-                                    <td> <?php echo $lista["idade_cato"]; ?> </td> 
+                                    <td> <?php echo $lista["data_nasc_cato"]; ?> </td> 
                                 </tr>
                             <?php
                                 } 

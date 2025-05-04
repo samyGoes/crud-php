@@ -10,8 +10,9 @@ $cato->setId($_POST["id"]);
 
 $cato->setNome($_POST["nome"]);
 $cato->setRga($_POST["rga"]);
+$cato->setRaca($_POST["raca"]);
 $cato->setPelagem($_POST["pelagem"]);
-$cato->setIdade($_POST["idade"]);
+$cato->setDataNasc($_POST["data"]);
 
 $cato->atualizar();
 

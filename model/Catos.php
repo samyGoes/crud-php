@@ -6,8 +6,9 @@ class Catos
     private $id;
     private $rga;
     private $nome;
+    private $raca;
     private $pelagem;
-    private $idade;
+    private $data_nasc;
 
     // SETTERS
     public function setId($id)
@@ -17,22 +18,39 @@ class Catos
 
     public function setRga($rga)
     {
-        $this->rga = $rga;
+        if(strlen($rga) == 9)
+        {
+            $this->rga = $rga;
+        }
     }
 
     public function setNome($nome)
     {
-        $this->nome = $nome;
+        if(strlen($nome) > 1)
+        {
+            $this->nome = $nome;
+        }    
+    }
+
+    public function setRaca($raca)
+    {
+        if(strlen($raca) >= 4)
+        {
+            $this->raca = $raca;
+        }
     }
 
     public function setPelagem($pelagem)
     {
-        $this->pelagem = $pelagem;
+        if(strlen($pelagem) >= 4)
+        {
+            $this->pelagem = $pelagem;
+        }     
     }
 
-    public function setIdade($idade)
+    public function setDataNasc($data_nasc)
     {
-        $this->idade = $idade;
+        $this->data_nasc = $data_nasc;
     }
 
 
@@ -52,14 +70,19 @@ class Catos
         return $this->nome;
     }
 
+    public function getRaca()
+    {
+        return $this->raca;
+    }
+
     public function getPelagem()
     {
         return $this->pelagem;
     }
 
-    public function getIdade()
+    public function getDataNasc()
     {
-        return $this->idade;
+        return $this->data_nasc;
     }
 
     public function cadastrar()
@@ -67,14 +90,15 @@ class Catos
         $conexao = Conexao::conexao();
 
         $queryInsert = $conexao->prepare(
-            "INSERT INTO tb_catos(nome_cato, rga_cato, pelagem_cato, idade_cato)
-             VALUES(?, ?, ?, ?)" 
+            "INSERT INTO tb_catos(nome_cato, rga_cato, raca_cato, pelagem_cato, data_nasc_cato)
+             VALUES(?, ?, ?, ?, ?)" 
         );
 
         $queryInsert->bindValue(1, $this->getNome());
         $queryInsert->bindValue(2, $this->getRga());
-        $queryInsert->bindValue(3, $this->getPelagem());
-        $queryInsert->bindValue(4, $this->getIdade());
+        $queryInsert->bindValue(3, $this->getRaca());
+        $queryInsert->bindValue(4, $this->getPelagem());
+        $queryInsert->bindValue(5, $this->getDataNasc());
 
         $queryInsert->execute();
 
@@ -86,7 +110,7 @@ class Catos
         $conexao = Conexao::conexao();
 
         $querySelect = $conexao->query(
-            "SELECT id_cato, nome_cato, rga_cato, pelagem_cato, idade_cato 
+            "SELECT id_cato, nome_cato, rga_cato, raca_cato, pelagem_cato, data_nasc_cato 
              FROM tb_catos"
         );
 
@@ -99,7 +123,7 @@ class Catos
         $conexao = Conexao::conexao();
 
         $querySelect = $conexao->prepare(
-            "SELECT id_cato, nome_cato, rga_cato, pelagem_cato, idade_cato 
+            "SELECT id_cato, nome_cato, rga_cato, raca_catos, pelagem_cato, data_nasc_cato 
              FROM tb_catos
              WHERE id_cato = ?"
         );
@@ -119,14 +143,15 @@ class Catos
 
         $queryUpdate = $conexao->prepare(
             "UPDATE tb_catos 
-             SET nome_cato = ?, rga_cato = ?, pelagem_cato = ?, idade_cato = ? 
+             SET nome_cato = ?, rga_cato = ?, raca_cato = ?, pelagem_cato = ?, data_nasc_cato = ? 
              WHERE id_cato = ?"
         );
         $queryUpdate->bindValue(1, $this->getNome());
         $queryUpdate->bindValue(2, $this->getRga());
-        $queryUpdate->bindValue(3, $this->getPelagem());
-        $queryUpdate->bindValue(4, $this->getIdade());
-        $queryUpdate->bindValue(5, $this->getId());
+        $queryUpdate->bindValue(3, $this->getRaca());
+        $queryUpdate->bindValue(4, $this->getPelagem());
+        $queryUpdate->bindValue(5, $this->getDataNasc());
+        $queryUpdate->bindValue(6, $this->getId());
         $queryUpdate->execute();
 
         echo("Atualização realizada com sucesso.");
