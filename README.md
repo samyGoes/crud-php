@@ -22,7 +22,7 @@ Projeto feito com arquitetura *monolítica*, utilizando padrão *MVC (Model-View
 - Simule um servidor local, caso queira baixe o [xampp](https://www.apachefriends.org/pt_br/index.html) (ele já contém o `apache` e `mysql`);
 - Entre na pasta `xampp/htdocs/` pelo terminal e execute o comando para clonar o repositório:
 ~~~cmd
-git clone https://github.com/samyGoes/sistema-basico-hospital.git
+git clone https://github.com/samyGoes/crud-php.git
 ~~~
 > Você precisa ter o [GIT](https://git-scm.com/downloads) instalado para executar o comando acima.
 
@@ -30,4 +30,4 @@ git clone https://github.com/samyGoes/sistema-basico-hospital.git
 ~~~cmd
 mysql -u root -p < "caminho-até-a-pasta/xampp/htdocs/crud-php/banco.sql"
 ~~~
-- Acesse `localhost:80` no navegador :)
+- Acesse `localhost/crud-php/` no navegador :)
