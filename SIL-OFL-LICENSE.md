@@ -9,10 +9,6 @@ Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-
 This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
 
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.  
-This license is copied below, and is also available with a FAQ at:  
-https\://openfontlicense.org  
 &nbsp;
 
 \----------------------------------------------------------------------
